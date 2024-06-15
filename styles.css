@@ -4,3 +4,43 @@ body {
     padding: 0;
 }
 
+.container-contents {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr) repeat(1, 2fr);
+}
+
+.sidebar {
+    padding: 25px;
+    color: aliceblue;
+    background-color: hsl(203, 59%, 51%);
+    grid-row: 1/10;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.sidebar > div > a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.header {
+    padding: 10px;
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid black;
+}
+
+.profile-pic {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
