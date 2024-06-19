@@ -1,40 +1,49 @@
-body {
+
+html,body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
+   
 }
 
 .container-contents {
     display: grid;
-    grid-template-columns: repeat(1, 1fr) repeat(1, 2fr);
+    grid-template-columns: repeat(1, 250px) repeat(1, auto);
 }
 
 .sidebar {
-    padding: 25px;
+    padding: 15px;
     color: aliceblue;
-    background-color: hsl(203, 59%, 51%);
-    grid-row: 1/5;
-    display: grid;
-    gap: 10px;
+    background-color: hsl(203, 71%, 44%);
+    grid-row: 1/3;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;  
 }
 
 .sidebar > .options > li > a {
     text-decoration: none;
     color: aliceblue;
+    min-width: 10px;
 }
 
 .sidebar > .options {
+    min-width: 10px;
+    padding: 0;
     list-style: none;
+    display: grid;
+    gap: 10px;
 }
+
 
 .header {
     border: 0;
-    padding: 5px 10px;
+    padding: 10px;
     grid-column: 2/3;
     display: grid;
     grid-template-columns: 2fr 1fr;
     background-color: white;
-    box-shadow: 0 3px 3px rgb(169, 168, 168);
+    box-shadow: 0 3px 3px rgb(144, 143, 143);
 }
 
 .header-col-1 {
@@ -102,6 +111,7 @@ img {
     gap: 20px;
     position: relative;
     bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .bell-profile {
@@ -109,12 +119,11 @@ img {
     justify-content: center;
     align-items: baseline;
     gap: 20px;
- 
 } 
 
 .option-btn {
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
 .option-btn > button {
@@ -133,4 +142,50 @@ img {
 .search-bar > input {
     border-radius: 20px;
     background-color: rgb(213, 204, 204);
+}
+
+.content-layout {
+    margin-top: 3px;
+    background-color: rgb(218, 214, 214);
+    padding: 20px;
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 2fr 1fr;    
+   
+}
+
+.content-layout > .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    grid-template-areas:
+    "title title"
+    "card card";
+}
+
+.projects > p {
+    grid-area: title;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    top: 15px;
+}
+
+@media (max-width: 800px) {
+    .sidebar {
+        display: none;
+    }
+    .header {
+        display: grid;
+        grid-column: 1/3;
+    }
+    .content-layout {
+        display: grid;
+        grid-column: 1/3;
+        grid-row: 2/5;
+    }
+    .content-layout > .projects {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
