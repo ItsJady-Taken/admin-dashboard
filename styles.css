@@ -198,7 +198,7 @@ img {
 
 .content-layout > .news {
     display: grid;
-    gap: 40px;
+    gap: 30px;
 }
 
 .content-layout > .news > .anouncement {
@@ -216,15 +216,46 @@ img {
     font-size: 20px;
     font-weight: bold;
     position: relative;
-    top: 15px;
-
+    top: 20px;
 }
 
 .anouncement > .card {
     grid-row: 2 / 3;
+    position: relative;
+    top: 10px;
 }
 
-@media (max-width: 800px) {
+.anouncement > .card > .card-body div:not(:last-child) {
+    border-bottom: 2px solid rgb(177, 175, 175); 
+}
+
+.anouncement > .card > .card-body div {
+     padding: 10px;
+}
+
+.content-layout > .news > .trending {
+    display: grid;
+    grid-template-columns: auto; 
+    grid-template-rows: auto 1fr;
+    gap: 30px;
+    grid-template-areas:
+    "title title"
+    "card card";
+}
+
+.trending > p {
+    grid-row: 1 / 2;;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    top: 15px;
+}
+
+.trending > .card {
+    grid-row: 2 / 3;
+}
+
+@media (max-width: 900px) {
     .sidebar {
         display: none;
     }
